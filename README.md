@@ -42,18 +42,23 @@ For more details, please refer to our [report on Arxiv](https://arxiv.org/abs/21
 
 Step1. Install YOLOX.
 ```shell
-git clone git@github.com:Megvii-BaseDetection/YOLOX.git
+!git clone https://github.com/blackvn90/YOLOX.git
 cd YOLOX
-pip3 install -U pip && pip3 install -r requirements.txt
-pip3 install -v -e .  # or  python3 setup.py develop
+!pip3 install -r requirements.txt
+!python3 setup.py develop
+!git clone https://github.com/NVIDIA/apex
+cd apex
+!pip3 install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+!pip3 install cython
+!pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 ```
 Step2. Install [apex](https://github.com/NVIDIA/apex).
 
 ```shell
 # skip this step if you don't want to train model.
-git clone https://github.com/NVIDIA/apex
+!git clone https://github.com/NVIDIA/apex
 cd apex
-pip3 install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+!pip3 install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 Step3. Install [pycocotools](https://github.com/cocodataset/cocoapi).
 
